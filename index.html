@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html class="h-100" lang="en">
 
-  <head>
-      <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="An anonymous compliment social media app ">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
@@ -14,207 +13,270 @@
   <title>Hype It</title>
   <link rel="stylesheet" href="css/theme.min.css">
 
-   <style>
+  <style>
+    #hide {
+      position: fixed;
+      bottom: 5vh;
+      right: 2vw;
+    }
 
-/* inter-300 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    .imgm3 {
+      animation: opacity 1.5s linear infinite;
+    }
 
-/* inter-400 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    @keyframes opacity {
+      0% {
+        opacity: 0;
+      }
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+      50% {
+        opacity: 100%;
+      }
 
-</style>
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', function () {
+      var hideDiv = document.getElementById('hide');
+      if (window.scrollY >= 50) {
+        hideDiv.style.display = 'none';
+      } else {
+        hideDiv.style.display = 'block';
+      }
+    });
+  </script>
 
 
-  </head>
+  <style>
+    /* inter-300 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-300.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-300.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
 
-  <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+    /* inter-400 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-regular.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
 
-    <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-      <div class="container d-flex justify-content-center align-items-center">
-        <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-          <img src="img/notiflogo.png" alt="Image" class="ms-md-1 mt-1">
-          <span class="ms-md-1 mt-1 fw-bolder me-md-5">Hype It</span>
-        </a>
-      </div>
-    </nav>
-    
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-500.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
 
-    <main>
-      
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-700.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
 
-<style>
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; 
-  }
 
-  .logo-container .col-lg-6 {
-    margin-top: 20px; 
-  }
-</style>
+</head>
 
-<div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
-  <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
-  <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
-    <div class="row d-flex align-items-center justify-content-center py-vh-5">
-      <div class="col-12 col-xl-10">
-        <h4 class="display-large mt-3 mb-1 lh-1">Experience Hype: the new way to anonymously compliment your friends. Choose them in wacky polls and let the hype begin!</h4>
-      </div>
+<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+
+  <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
+    <div class="container d-flex justify-content-center align-items-center">
+      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+        <img src="img/notiflogo.png" alt="Image" class="ms-md-1 mt-1">
+        <span class="ms-md-1 mt-1 fw-bolder me-md-5">Hype It</span>
+      </a>
     </div>
+  </nav>
 
-    <div class="position-relative">
-      <div class="container ">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-6 mt-3 text-center-container">
-            <div class="logo-container">
-              <a href="https://apps.apple.com/app/id6449774733?platform=iphone" target="_blank" rel="noopener noreferrer">
-                <img class="img-fluid rounded-6 mb-n2 shadow" src="img/webp/Appstore.webp" width="150" height="150" alt="a nice person" loading="lazy" data-aos="zoom-in-right">
-              </a>
-            </div>
+
+  <main>
+
+
+    <style>
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .logo-container .col-lg-6 {
+        margin-top: 20px;
+      }
+    </style>
+
+    <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
+      <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
+      <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
+        <div class="row d-flex align-items-center justify-content-center py-vh-5">
+          <div class="col-12 col-xl-10">
+            <h4 class="display-large mt-3 mb-1 lh-1">Experience Hype: the new way to anonymously compliment your
+              friends. Choose them in wacky polls and let the hype begin!</h4>
           </div>
-          <div class="col-12 col-lg-6 mt-3 text-center-container">
-            <div class="logo-container">
-              <a href="https://play.google.com/store/apps/details?id=com.hypeit.hypeitapp" target="_blank" rel="noopener noreferrer">
-                <img class="img-fluid rounded-6 ms-3 mb-n2 mt-3 shadow" src="img/webp/Playstore.webp" width="150" height="150" alt="another nice person" loading="lazy" data-aos="zoom-in-up">
-              </a>
+        </div>
+
+        <div class="position-relative">
+          <div class="container ">
+            <div class="row justify-content-center">
+              <div class="rounded-5 py-5" data-aos="fade">
+                <h4 class="display-3 text-center my-4">We are now available on AppStore and Playstore</h4>
+              </div>
+              <div class="col-12 col-lg-6 mt-3 text-center-container">
+                <div class="logo-container">
+                  <a href="https://apps.apple.com/app/id6449774733?platform=iphone" target="_blank"
+                    rel="noopener noreferrer">
+                    <img style="margin-top: 15px !important;" class="img-fluid rounded-6 mb-n2 shadow"
+                      src="img/webp/Appstore.webp" width="150" height="150" alt="a nice person" loading="lazy"
+                      data-aos="zoom-in-right">
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 mt-3 text-center-container">
+                <div class="logo-container">
+                  <a href="https://play.google.com/store/apps/details?id=com.hypeit.hypeitapp" target="_blank"
+                    rel="noopener noreferrer">
+                    <img class="img-fluid rounded-6 ms-3 mb-n2 mt-3 shadow" src="img/webp/Playstore.webp" width="150"
+                      height="150" alt="another nice person" loading="lazy" data-aos="zoom-in-up">
+                  </a>
+                </div>
+              </div>
+              <div id="hide">
+                <ul>
+                  <img src="https://icon-library.com/images/white-down-arrow-icon/white-down-arrow-icon-9.jpg"
+                    class="imgm3" width="30px" height="20px" />
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4 rounded-5 py-5" data-aos="fade">
-            <h4 class="display-3 text-center my-4" >We are now available in AppStore and Playstore</h4>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 
 
-<div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
-  <div class="container-fluid px-vw-5">
-    <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
-    <div class="row d-flex align-items-center position-relative justify-content-center px-0">
-      <div class="col-12 col-md-auto mb-4 mb-md-0">
-          <img src="img/webp/p1.jpg" width="375" height="812" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-        </object>
-      </div>
-      
-      <div class="col-12 col-md-auto mb-4 mb-md-0">
-        <img src="img/webp/p2.jpg" width="375" height="812" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-      </div>
-      <div class="col-12 col-md-auto mb-4 mb-md-0">
-        <img src="img/webp/p3.jpg" width="375" height="812" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-auto mt-4 mt-md-0 mb-4 mb-md-0">
-        <img src="img/webp/p4.jpg" width="375" height="812" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-      </div>
-      <div class="col-12 col-md-auto mt-4 mt-md-0">
-        <img src="img/webp/p5.jpg" width="375" height="812" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
+      <div class="container-fluid px-vw-5">
+        <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
+        <div class="row d-flex align-items-center position-relative justify-content-center px-0">
+          <div class="col-12 col-md-auto mb-4 mb-md-0">
+            <img src="img/webp/p1.jpg" width="375" height="812" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+            </object>
+          </div>
 
-
-
-
-<footer class="bg-black border-top border-dark">
-  <div class="container py-vh-4 text-secondary fw-lighter">
-    <div class="row">
-      <div class="col-12 col-lg-5 py-2 text-center text-lg-start">
-        <a class="navbar-brand pe-md-4 fs-5 col-12 col-md-auto text-center" href="index.html">
-          <img src="img/notiflogo.png" alt="Image" class="ms-md-1 mt-1" style="height: 50px;">
-          <span class="ms-md-1 mt-1 fw-bolder me-md-2">Hype It</span>
-        </a>
-      </div>
-      <div class="col border-end border-dark">
-        <span class="h6" style="font-size: 20px;">Company</span>
-        <ul class="nav flex-column" style="font-size: 20px;">
-          <li class="nav-item">
-            <a href="About-us.html" class="link-fancy link-fancy-light" target="_blank">About us</a>
-          </li>          
-          <li class="nav-item">
-            <a href="Terms-of-use.html" class="link-fancy link-fancy-light" target="_blank">Terms of use</a>
-          </li>
-          <li class="nav-item">
-            <a href="Privacy-and-Policy.html" class="link-fancy link-fancy-light" target="_blank">Privacy and Policy</a>
-          </li>
-          <li class="nav-item">
-            <a href="FAQ's.html" class="link-fancy link-fancy-light" target="_blank">FAQ's</a>
-          </li>
-        </ul>
+          <div class="col-12 col-md-auto mb-4 mb-md-0">
+            <img src="img/webp/p2.jpg" width="375" height="812" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+          </div>
+          <div class="col-12 col-md-auto mb-4 mb-md-0">
+            <img src="img/webp/p3.jpg" width="375" height="812" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-auto mt-4 mt-md-0 mb-4 mb-md-0">
+            <img src="img/webp/p4.jpg" width="375" height="812" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+          </div>
+          <div class="col-12 col-md-auto mt-4 mt-md-0">
+            <img src="img/webp/p5.jpg" width="375" height="812" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+          </div>
+        </div>
       </div>
     </div>
-  </div> 
-</footer>
-</main>
 
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/link.js"></script>
-<script>
-AOS.init({
- duration: 800, // values from 0 to 3000, with step 50ms
-});
-</script>
-<script>
-  let scrollpos = window.scrollY
-  const header = document.querySelector(".navbar")
-  const header_height = header.offsetHeight
 
-  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
-  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+    <footer class="bg-black border-top border-dark">
+      <div class="container py-vh-4 text-secondary fw-lighter">
+        <div class="row">
+          <div class="col-12 col-lg-5 py-2 text-center text-lg-start">
+            <a class="navbar-brand pe-md-4 fs-5 col-12 col-md-auto text-center" href="index.html">
+              <img src="img/notiflogo.png" alt="Image" class="ms-md-1 mt-1" style="height: 50px;">
+              <span class="ms-md-1 mt-1 fw-bolder me-md-2">Hype It</span>
+            </a>
+          </div>
+          <div class="col border-end border-dark">
+            <span class="h6" style="font-size: 20px;">Company</span>
+            <ul class="nav flex-column" style="font-size: 20px;">
+              <li class="nav-item">
+                <a href="About-us.html" class="link-fancy link-fancy-light" target="_blank">About us</a>
+              </li>
+              <li class="nav-item">
+                <a href="Terms-of-use.html" class="link-fancy link-fancy-light" target="_blank">Terms of use</a>
+              </li>
+              <li class="nav-item">
+                <a href="Privacy-and-Policy.html" class="link-fancy link-fancy-light" target="_blank">Privacy and
+                  Policy</a>
+              </li>
+              <li class="nav-item">
+                <a href="FAQ's.html" class="link-fancy link-fancy-light" target="_blank">FAQ's</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
 
-  window.addEventListener('scroll', function() {
-    scrollpos = window.scrollY;
 
-    if (scrollpos >= header_height) { add_class_on_scroll() }
-    else { remove_class_on_scroll() }
 
-    console.log(scrollpos)
-  })
-</script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/link.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+  <script>
+    let scrollpos = window.scrollY
+    const header = document.querySelector(".navbar")
+    const header_height = header.offsetHeight
 
-  </body>
+    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+    window.addEventListener('scroll', function () {
+      scrollpos = window.scrollY;
+
+      if (scrollpos >= header_height) { add_class_on_scroll() }
+      else { remove_class_on_scroll() }
+
+      console.log(scrollpos)
+    })
+  </script>
+
+</body>
+
 </html>
